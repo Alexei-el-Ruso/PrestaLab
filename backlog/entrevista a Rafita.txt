@@ -1,0 +1,14 @@
+¿Cuál es el problema que presenta? ** Que dejen de robar los materiales, no hay control de mayterial
+¿Qué esperas que el sistema haga? ** Ya no hacer un registro manual.
+¿Para cuántas personas está pensado el sistema? ** Como para toda la uni
+Concurrencia ** idk
+¿Cómo quieres implementar el sistema? ** Desde cel, cada usuario en línea
+¿Quieres que incluya herramientas de accesibilidad para personas con discapacidad? ** idk
+¿Qué información quiere guardar o registrar (en el sistema)? ** Que el alumno pueda ver una imagen del préstamo,
+
+¿Qué información quieres que se muestre? ** Selección: Resumen, como ticket, reporte.
+¿Qué información quieres que se exponga sobre los materiales? ** idk
+
+Notas:
+1 lab
+escalable por favor
