@@ -75,6 +75,7 @@
 
 
 - Como estudiante, quiero acceso a mi historial de préstamos, para futuras aclaraciones y consultas.
+	- 
 
 - Como administrador, quiero generar un reporte manual, para generar estadísticas y mejorar la toma de decisiones.
 
