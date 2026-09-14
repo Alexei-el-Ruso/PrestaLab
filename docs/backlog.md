@@ -95,3 +95,12 @@ Aunque las estadísticas y reportes aportan valor para la gestión y la toma de 
 - Como Admin, quiero que el usuario no pueda registrar una devolución sin confirmarlo, para mantener el registro coherente.
 
 - Como Admin, quiero respaldar la información, para no perderla en caso de emergencia.
+
+
+
+# Modelado de datos
+
+Los datos y la relación de estos fueron propuestos mediante un diagrama *Entidad-Relación*
+de la siguiente manera:
+
+![Entidad-Relación.png](Entidad-Relaci%C3%B3n.png)
