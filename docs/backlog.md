@@ -48,4 +48,5 @@
 1. Como Admin, quiero que el usuario no pueda registrar una devolución sin confirmarlo, para mantener el registro coherente.
 2. Como Admin, quiero respaldar la información, para no perderla en caso de emergencia.
 
-![Entidad-Relación.png](Entidad-Relaci%C3%B3n.png)
+
+
