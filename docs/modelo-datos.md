@@ -1,11 +1,11 @@
-# Modelo de Datos y Reglas de Negocio
+# Modelo de Datos y Reglas de Negocio — PrestaLab
 
 ## Descripción General
 
 El sistema administra el préstamo de equipos y materiales a estudiantes. Existen dos tipos de usuarios con responsabilidades diferenciadas:
 
-- *Estudiante:* solicita préstamos y consulta únicamente sus propios registros.
-- *Administrador:* valida solicitudes, ajusta condiciones del préstamo y tiene acceso a todos los préstamos del sistema.
+- **Estudiante:** solicita préstamos y consulta únicamente sus propios registros.
+- **Administrador:** valida solicitudes, ajusta condiciones del préstamo y tiene acceso a todos los préstamos del sistema.
 
 ---
 
@@ -88,10 +88,10 @@ Representa la solicitud y autorización de equipos.
 | administrador_id | FK |
 | estado | varchar |
 
-### Descripción de fechas
+### Descripción de Fechas
 
-- *dias_solicitados:* duración propuesta por el estudiante.
-- *dias_autorizados:* duración final aprobada por el administrador.
+- **dias_solicitados:** duración propuesta por el estudiante.
+- **dias_autorizados:** duración final aprobada por el administrador.
 - Ambas duraciones deben conservarse para fines de auditoría y seguimiento.
 
 ---
@@ -137,11 +137,11 @@ Los daños se registran sobre cada material específico involucrado, no sobre el
 ## Usuario - Préstamo
 
 | Relación | Cardinalidad |
-|-----------|-------------|
+|------------|------------|
 | Usuario realiza Préstamo | 1 : N |
 | Préstamo pertenece a Usuario | N : 1 |
 
-Interpretación:
+### Interpretación
 
 - Un usuario puede realizar muchos préstamos.
 - Cada préstamo pertenece a un solo usuario.
@@ -151,11 +151,11 @@ Interpretación:
 ## Administrador - Préstamo
 
 | Relación | Cardinalidad |
-|-----------|-------------|
+|------------|------------|
 | Administrador gestiona Préstamo | 1 : N |
 | Préstamo es aprobado por Administrador | N : 1 |
 
-Interpretación:
+### Interpretación
 
 - Un administrador puede gestionar múltiples préstamos.
 - Cada préstamo queda asociado a un administrador responsable.
@@ -165,7 +165,7 @@ Interpretación:
 ## CategoríaMaterial - Material
 
 | Relación | Cardinalidad |
-|-----------|-------------|
+|------------|------------|
 | Categoría contiene Material | 1 : N |
 | Material pertenece a Categoría | N : 1 |
 
@@ -174,29 +174,31 @@ Interpretación:
 ## Préstamo - Material
 
 | Relación | Cardinalidad |
-|-----------|-------------|
+|------------|------------|
 | Préstamo contiene Material | N : M |
 | Material participa en Préstamos | N : M |
 
-Implementada mediante:
+### Implementación
 
-- DetallePrestamo
+La relación se implementa mediante:
+
+- **DetallePrestamo**
 
 ---
 
-## Material - DañoMaterial
+## Material - DanoMaterial
 
 | Relación | Cardinalidad |
-|-----------|-------------|
+|------------|------------|
 | Material registra daños | 1 : N |
 | Daño pertenece a Material | N : 1 |
 
 ---
 
-## Préstamo - DañoMaterial
+## Préstamo - DanoMaterial
 
 | Relación | Cardinalidad |
-|-----------|-------------|
+|------------|------------|
 | Préstamo puede generar daños | 1 : N |
 | Daño está asociado a un préstamo | N : 1 |
 
@@ -204,31 +206,35 @@ Implementada mediante:
 
 # Reglas de Negocio
 
-## Gestión de préstamos
+## Gestión de Préstamos
 
 1. Un préstamo puede incluir uno o varios materiales.
 2. La devolución se realiza de forma integral.
-   - No se permiten devoluciones parciales de los artículos de un préstamo.
-3. El estudiante propone una duración inicial del préstamo.
-4. El administrador puede modificar la duración solicitada antes de aprobarla.
-5. Deben almacenarse tanto los días solicitados como los días finalmente autorizados.
+3. No se permiten devoluciones parciales de los artículos de un préstamo.
+4. El estudiante propone una duración inicial del préstamo.
+5. El administrador puede modificar la duración solicitada antes de aprobarla.
+6. Deben almacenarse tanto los días solicitados como los días finalmente autorizados.
 
-## Gestión de daños
+---
 
-6. Los daños se registran individualmente por material.
-7. Un mismo préstamo puede generar múltiples registros de daño si varios materiales presentan incidencias.
+## Gestión de Daños
 
-## Control de acceso
+7. Los daños se registran individualmente por material.
+8. Un mismo préstamo puede generar múltiples registros de daño si varios materiales presentan incidencias.
+
+---
+
+## Control de Acceso
 
 ### Estudiante
 
-Puede:
+**Puede:**
 
 - Solicitar préstamos.
 - Consultar sus préstamos.
 - Consultar el estado de sus solicitudes.
 
-No puede:
+**No puede:**
 
 - Ver préstamos de otros usuarios.
 - Autorizar préstamos.
@@ -236,7 +242,7 @@ No puede:
 
 ### Administrador
 
-Puede:
+**Puede:**
 
 - Consultar todos los préstamos.
 - Aprobar o rechazar solicitudes.
@@ -245,12 +251,36 @@ Puede:
 - Registrar daños.
 - Gestionar materiales y categorías.
 
-## Criterio de autorización
+---
 
-8. No existe un proceso formal ni reglas automáticas de aprobación.
-9. La autorización de cada préstamo queda a discreción del administrador responsable y se evalúa caso por caso.
+## Criterio de Autorización
 
-## Alcance del sistema
+9. No existe un proceso formal ni reglas automáticas de aprobación.
+10. La autorización de cada préstamo queda a discreción del administrador responsable y se evalúa caso por caso.
 
-10. Los materiales no se relacionan con materias, asignaturas o cursos académicos.
-11. Esta asociación fue considerada durante el levantamiento de requisitos, pero fue descartada por el cliente debido a que no aporta valor al proceso de préstamo.
+---
+
+## Alcance del Sistema
+
+11. Los materiales no se relacionan con materias, asignaturas o cursos académicos.
+12. Esta asociación fue considerada durante el levantamiento de requisitos, pero fue descartada por el cliente debido a que no aporta valor al proceso de préstamo.
+
+---
+
+# Observaciones de Diseño
+
+### Relación N:M
+
+La relación entre **Préstamo** y **Material** es de muchos a muchos (N:M), por lo que se implementa mediante la entidad **DetallePrestamo**.
+
+### Control de Daños
+
+Los daños se registran por artículo específico y no por préstamo, permitiendo identificar con precisión qué material presentó incidencias.
+
+### Auditoría
+
+El sistema conserva tanto los días solicitados como los días autorizados para mantener trazabilidad sobre las decisiones tomadas por los administradores.
+
+### Responsabilidad Administrativa
+
+Cada préstamo queda asociado a un administrador responsable mediante `administrador_id`, permitiendo conocer quién autorizó la operación.

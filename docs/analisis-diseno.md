@@ -1,4 +1,4 @@
-# 🧪 Sistema de Gestión de Préstamos — Laboratorio
+#  Sistema de Gestión de Préstamos — Laboratorio
 
 > **Resumen ejecutivo:** Arquitectura ligera, modelo relacional optimizado y trazabilidad estricta para eliminar la libreta del mostrador sin sobreingeniería.
 > Documentos de los que depende este: [backlog](./backlog.md) · [modelo de datos](./modelo-datos.md) · [modelo de documentos](./modelo-documentos.md) · [decisión de motor](./decision-motor.md)
@@ -59,18 +59,18 @@
 
 ## 4. Matriz de trazabilidad
 
-| Historia | Criterio de aceptación | Entidad.campo | Operación | RNF | Hueco |
-| :---: | :--- | :--- | :---: | :---: | :---: |
-| **#03** | Equipo disponible al registrar -> fecha compromiso | `prestamo.fecha_salida/dias_aut/fecha_comp` | Escribe | — | — |
-| **#03** | 3 equipos en un mismo registro | `prestamo_equipo.prestamo_id/equipo_id/activo` | Escribe | RNF-4 | — |
-| **#03** | Rechazo si equipo ya está prestado | `prestamo_equipo.activo` | Lee | RNF-4 | — |
-| **#05** | Inventario muestra no disponible en prestados | `prestamo_equipo.activo`, `equipo.etiqueta` | Lee | RNF-1 | — |
-| **#05** | Prestatario acotado a sus propios préstamos | `prestamo.persona_id` | Lee | RNF-2 | — |
-| **#07** | Devolución cierra préstamo completo | `prestamo.fecha_cierre`, `prestamo_equipo.activo` | Escribe | — | — |
-| **#12** | Daño registrado por artículo específico | `prestamo_equipo.dano/nota_dano` | Escribe | — | — |
-| **#14** | Historial por persona | `persona.*`, `prestamo.*` | Lee | — | — |
-| **#16** | Registro dual de días propuestos vs. autorizados | `prestamo.dias_propuestos/dias_autorizados` | Escribe | — | — |
-| **#19** | Ficha de retrasos frecuentes | `prestamo.fecha_devolucion_real` | Lee | — | — |
+| Historia | Criterio de aceptación                             | Entidad.campo                                     | Operación |  RNF  | Hueco |
+| :------: | :------------------------------------------------- | :------------------------------------------------ | :-------: | :---: | :---: |
+| **#03**  | Equipo disponible al registrar -> fecha compromiso | `prestamo.fecha_salida/dias_aut/fecha_comp`       |  Escribe  |   —   |   —   |
+| **#03**  | 3 equipos en un mismo registro                     | `prestamo_equipo.prestamo_id/equipo_id/activo`    |  Escribe  | RNF-4 |   —   |
+| **#03**  | Rechazo si equipo ya está prestado                 | `prestamo_equipo.activo`                          |    Lee    | RNF-4 |   —   |
+| **#05**  | Inventario muestra no disponible en prestados      | `prestamo_equipo.activo`, `equipo.etiqueta`       |    Lee    | RNF-1 |   —   |
+| **#05**  | Prestatario acotado a sus propios préstamos        | `prestamo.persona_id`                             |    Lee    | RNF-2 |   —   |
+| **#07**  | Devolución cierra préstamo completo                | `prestamo.fecha_cierre`, `prestamo_equipo.activo` |  Escribe  |   —   |   —   |
+| **#12**  | Daño registrado por artículo específico            | `prestamo_equipo.dano/nota_dano`                  |  Escribe  |   —   |   —   |
+| **#14**  | Historial por persona                              | `persona.*`, `prestamo.*`                         |    Lee    |   —   |   —   |
+| **#16**  | Registro dual de días propuestos vs. autorizados   | `prestamo.dias_propuestos/dias_autorizados`       |  Escribe  |   —   |   —   |
+| **#19**  | Ficha de retrasos frecuentes                       | `prestamo.fecha_devolucion_real`                  |    Lee    |   —   |   —   |
 
 > *Cobertura activa:* 5 historias *Must*, 2 *Should*.
 
