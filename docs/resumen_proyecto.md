@@ -1,15 +1,14 @@
-
-# Resumen del Proyecto: Sistema de Control de Materiales
+# Resumen del Proyecto — Sistema de Control de Materiales
 
 ## 1. Problema y Objetivo
 
 ### Problema Actual
 
-Pérdida y robo de materiales debido a la falta de control y al uso de un registro manual ineficiente.
+Actualmente, el control de materiales de laboratorio se realiza mediante registros manuales, lo que genera problemas de seguimiento, pérdida de equipos y posibles robos debido a la falta de trazabilidad.
 
-### Solución Esperada
+### Objetivo
 
-Automatizar e informatizar el proceso de préstamos para eliminar los registros en papel y asegurar la trazabilidad del inventario.
+Desarrollar un sistema digital que automatice la gestión de préstamos de materiales, elimine la dependencia de registros en papel y permita mantener un control preciso del inventario en todo momento.
 
 ---
 
@@ -23,15 +22,15 @@ Automatizar e informatizar el proceso de préstamos para eliminar los registros 
 
 ### Alcance Inicial
 
-- Implementación en un laboratorio.
+La primera versión del sistema estará orientada a la gestión de préstamos en un único laboratorio.
 
 ### Escalabilidad
 
-- El sistema debe diseñarse de forma modular y escalable para permitir su expansión futura a otros laboratorios o facultades de la universidad.
+El sistema deberá diseñarse de forma modular para facilitar su futura expansión a otros laboratorios, departamentos o facultades de la institución.
 
 ### Concurrencia
 
-- Pendiente de definir según el flujo de usuarios durante las horas pico.
+La cantidad máxima de usuarios simultáneos aún no ha sido definida y deberá determinarse durante las siguientes etapas del proyecto.
 
 ---
 
@@ -39,76 +38,92 @@ Automatizar e informatizar el proceso de préstamos para eliminar los registros 
 
 ### Plataforma
 
-- Aplicación web/móvil responsiva.
-- Accesible desde teléfonos celulares y otros dispositivos.
+El sistema estará disponible como una aplicación web responsiva, accesible desde:
+
+- Computadoras
+- Teléfonos móviles
+- Tabletas
 
 ### Conectividad
 
-- Funcionamiento en línea y en tiempo real para todos los usuarios.
+El sistema funcionará en línea y permitirá la actualización de información en tiempo real para todos los usuarios.
 
 ### Accesibilidad
 
-- Pendiente de evaluación conforme a las necesidades institucionales y normativas aplicables.
+Los requisitos de accesibilidad serán definidos posteriormente conforme a las necesidades institucionales y a los estándares aplicables.
 
 ---
 
-## 4. Funcionalidades Principales y Datos
+## 4. Funcionalidades Principales
 
-### Registro e Información Entrante
+### Registro de Información
 
 #### Captura de Evidencia
 
-- Captura y visualización de una imagen del estado del material al momento de realizar el préstamo.
+Al momento del préstamo, el sistema permitirá:
 
-#### Registro Digital
+- Capturar una imagen del estado físico del material.
+- Consultar posteriormente la evidencia almacenada.
 
-- Automatización del registro de:
-  - Préstamos
-  - Devoluciones
-  - Usuarios
+#### Gestión Digital
 
-### Salidas e Informes
+El sistema automatizará el registro de:
+
+- Usuarios
+- Préstamos
+- Devoluciones
+
+### Reportes y Salidas
 
 #### Comprobantes de Préstamo
 
-- Generación de tickets o comprobantes digitales para los usuarios.
+El sistema generará comprobantes digitales que servirán como evidencia de la transacción realizada.
 
 #### Reportes de Inventario
 
-- Reportes administrativos sobre:
-  - Estado de los materiales
-  - Historial de movimientos
-  - Trazabilidad de inventario
+Se podrán consultar reportes relacionados con:
+
+- Estado de los materiales
+- Historial de movimientos
+- Trazabilidad de inventario
+- Disponibilidad de recursos
 
 ---
 
-## 5. Puntos Pendientes por Definir
+## 5. Aspectos Pendientes por Definir
 
-### Atributos de los Materiales
+### Información de los Materiales
 
-Definir los campos específicos de cada artículo, tales como:
+Se deberá establecer el conjunto definitivo de atributos para cada material, incluyendo:
 
-- Código de barras o QR
+- Código QR o código de barras
 - Número de serie
 - Categoría
 - Estado físico
 - Disponibilidad
+- Evidencias fotográficas
 - Otros atributos relevantes
 
-### Estimación de Concurrencia
+### Capacidad del Sistema
 
-- Determinar el volumen máximo de usuarios simultáneos para dimensionar adecuadamente la infraestructura del sistema.
+Se deberá determinar la cantidad esperada de usuarios concurrentes para dimensionar adecuadamente la infraestructura tecnológica.
 
-### Criterios de Accesibilidad
+### Accesibilidad
 
-- Evaluar la necesidad de cumplir con estándares como WCAG u otros requisitos visuales o auditivos institucionales.
+Será necesario evaluar el cumplimiento de estándares de accesibilidad, como WCAG, así como otros requerimientos institucionales.
 
 ---
 
-## Resumen Ejecutivo
+## 6. Restricciones y Consideraciones
 
-El proyecto busca desarrollar un sistema digital para la gestión y control de préstamos de materiales de laboratorio, eliminando los registros manuales y mejorando la trazabilidad del inventario.
+- El sistema estará enfocado exclusivamente en la gestión de préstamos de materiales.
+- Los procesos administrativos externos al préstamo quedan fuera del alcance de esta versión.
+- La solución deberá mantener la integridad y trazabilidad de toda la información registrada.
 
-La solución estará disponible como aplicación web/móvil, permitirá registrar préstamos y devoluciones en tiempo real, generar comprobantes digitales y producir reportes administrativos.
+---
 
-Su diseño deberá ser escalable para futuras expansiones dentro de la universidad.
+# Resumen Ejecutivo
+
+PrestaLab es un sistema orientado a la gestión y control de préstamos de materiales de laboratorio. Su objetivo es sustituir los registros manuales por un proceso digital que permita conocer en tiempo real la disponibilidad de los recursos, registrar préstamos y devoluciones, almacenar evidencia fotográfica y generar reportes administrativos.
+
+La solución estará disponible mediante una aplicación web responsiva, accesible desde distintos dispositivos, y deberá diseñarse bajo principios de escalabilidad para permitir futuras ampliaciones dentro de la institución.
