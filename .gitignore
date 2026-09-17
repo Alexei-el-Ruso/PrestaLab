@@ -24,3 +24,21 @@ dist-ssr
 *.sw?
 
 docs/.obsidian
+# Obsidian: configuración personal, no del proyecto
+
+docs/.obsidian/workspace.json
+
+docs/.obsidian/workspace-mobile.json
+
+docs/.obsidian/cache
+ 
+# Sistema
+
+.DS_Store
+ 
+ # Obsidian: configuración personal
+docs/.obsidian/workspace.json
+docs/.obsidian/workspace-mobile.json
+docs/.obsidian/graph.json
+docs/.obsidian/cache/
+`
