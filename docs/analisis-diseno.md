@@ -1,7 +1,7 @@
 # 🧪 Sistema de Gestión de Préstamos — Laboratorio
 
 > **Resumen ejecutivo:** Arquitectura ligera, modelo relacional optimizado y trazabilidad estricta para eliminar la libreta del mostrador sin sobreingeniería.
-
+> Documentos de los que depende este: [backlog](./backlog.md) · [modelo de datos](./modelo-datos.md) · [modelo de documentos](./modelo-documentos.md) · [decisión de motor](./decision-motor.md)
 ---
 
 ## 1. El sistema en una página
