@@ -40,7 +40,7 @@ Qué motor guarda los datos del sistema de préstamos de **PrestaLab**: **Postgr
 
 El índice único parcial:
 
-```sql
+sql
 CREATE UNIQUE INDEX equipo_en_un_solo_prestamo_abierto
 ON prestamo_equipo (equipo_id)
 WHERE activo;
