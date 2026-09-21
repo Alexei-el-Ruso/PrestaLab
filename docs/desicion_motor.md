@@ -3,15 +3,14 @@
 **Equipo 0 · Sesión 8**  
 *Compara: modelo relacional vs. modelo de documentos · Se consume en: [[analisis-diseno]]*
 
----
 
-> [!INFO] Navegación de la Bóveda
+
+
 > Esta nota documenta la decisión de arquitectura de persistencia para el sistema **PrestaLab**. Se conecta con:
 > * **Documento Integrador:** [[analisis-diseno]]
 > * **Modelo Relacional:** [[modelo-datos]]
 > * **Modelo en Documentos:** [[modelo-documentos]]
 
----
 
 ## 1. Qué se decide
 
@@ -28,13 +27,12 @@ Qué motor guarda los datos del sistema de préstamos de **PrestaLab**: **Postgr
 | **Volumen esperado** | **Bajo** | Cientos de préstamos por semestre; cualquier motor soporta la carga sin sufrir. |
 | **Lo que el equipo sabe operar** | **Medio** | Desarrollo acotado al tiempo del semestre académico. |
 
----
 
 ## 3. Decisión
 
 **PostgreSQL.**
 
----
+
 
 ## 4. Razón principal
 
